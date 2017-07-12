@@ -1,0 +1,24 @@
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+nav {
+    margin-bottom: 4em;
+}
+
+date {
+    font-family: monospace;
+    margin-right: 1em;
+}
+
+blockquote {
+    border-left: 5px solid #64b5f6;
+}
+
+h5 {
+    margin-bottom: 1em;
+}
+
+.max-width {
+    max-width: 1280px;
+}

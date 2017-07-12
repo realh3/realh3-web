@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>#realh3</title>
+        <script type="text/javascript" src="assets/js/gdoc.min.js"></script>
+        <link rel="StyleSheet" href="assets/css/materialize.css" />
+        <link rel="StyleSheet" href="assets/css/realh3.css" />
+        <link href="//fonts.union.io/css/compiled/work-sans.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper  light-blue  darken-1">
+                <div class="row  max-width">
+                    <div class="col">
+                        <a href="/" class="brand-logo">HIGHLANDER 3</a>
+                    </div>
+                    <ul id="nav-mobile" class="right  hide-on-med-and-down">
+                        <li><a href="https://github.com/realh3/realh3-web/" target="_new">GitHub</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1QPaPHh5GxepQCxhQyfaUEWVIeQVOkPLDMS1lDBcchQQ/edit" target="_new">Edit the Google Doc</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Quote of the day -->
+        <div class="row  max-width">
+            <div class="col  s12  m9  offset-l3">
+                <blockquote gDoc="quote"></blockquote>
+            </div>
+        </div>
+
+        <!-- How to join and recent news -->
+        <div class="row  max-width">
+
+            <!-- Connect -->
+            <div class="col  s12  l3">
+                <!-- This is used for vertical spacing -->
+                <h5 class="hide-on-med-and-down">&nbsp;</h5>
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Connect</span>
+                        <p gDoc="connect"></p>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://www.glowing-bear.org/" class="blue-text  text-darken-2">Glowing Bear (web IRC client)</a>
+                        <br />
+                        <a href="https://adium.im/" class="blue-text  text-darken-2">Adium (desktop IRC client)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- """""News""""" -->
+            <div class="col  s12  l9">
+                <h5>LATEST NEWS</h5>
+                <ul class="collection" gDoc="news-section"></ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                gDoc('1QPaPHh5GxepQCxhQyfaUEWVIeQVOkPLDMS1lDBcchQQ', 'meta');
+                gDoc({
+                    public: "1QPaPHh5GxepQCxhQyfaUEWVIeQVOkPLDMS1lDBcchQQ",
+                    sheet: 'news',
+                    gDoc: 'news-section',
+                    columns: ['date', 'news'],
+                    loop: false,
+                    html: function() {
+                        var html = '<li class="collection-item"><date>{{date}}</date>';
+                        html += '<span>{{news}}</span></li>';
+                        return html;
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
